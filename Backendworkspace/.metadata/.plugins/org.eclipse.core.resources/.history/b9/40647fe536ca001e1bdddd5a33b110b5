@@ -1,0 +1,20 @@
+package com.ihub.www.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.ihub.www.model.Employee;
+import com.ihub.www.service.EmployeeService;
+
+public class EmployeeController 
+{
+   @Autowired
+	EmployeeService employeeService;
+   @GetMapping("/employees")
+   public List<Employee> getAllEmployees()
+   {
+	   return employeeService.getAllEmployees();
+   }
+}
